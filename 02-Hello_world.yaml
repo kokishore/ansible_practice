@@ -1,0 +1,8 @@
+- name: Hello World
+  hosts: local
+  connection: local # no need of user name and password
+  become: yes
+  tasks: #list of tasks
+  - name: Print Hello World
+    ansbile.builtin.debug:
+      msg: "Hello World Iam Learning Ansible Course"
