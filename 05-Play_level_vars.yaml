@@ -1,0 +1,16 @@
+- name: Play level vars 
+  hosts: local 
+  connection: local 
+  vars:
+    course: Ansible
+    duration: 10hr
+    learner: Kishore 
+  tasks:
+  - name: Print Course Info 
+    ansible.builtin.debug:
+    # vars shoudl be surrounde by ""
+      msg: "Hello {{ course }} {{ duration }} {{ learner }}"
+
+  - name: Print Course Info again
+    ansible.builtin.debug:
+      msg: " Hello Currently {{ course }} is running its {{ duration }} and {{ learner }}"      
