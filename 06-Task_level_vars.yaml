@@ -1,0 +1,17 @@
+- name: Task level vars
+  hosts: local 
+  connection: local
+  vars:
+    course: Ansible
+    duration:  10hr
+    learner: kishore
+  tasks: #list of tasks 
+  - name: accessing variables at task level 
+    vars:
+      course: Devsecops with AWS
+    ansible.builtin.debug:
+      msg: "Hello Course {{ course }}, is having duration {{ duration }}, which is learning by {{ learner }}"  
+
+  - name: Accessing variables at Play 
+    ansible.builtin.debug:
+      msg:  "Hello Course {{ course }}, is having duration {{ duration }}, which is learning by {{ learner }}"  
